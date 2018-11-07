@@ -7,6 +7,9 @@ If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 	Break
 }
 
+Stop-Process -Name Garena
+
 Set-Service -Name GarenaPlatform -Status Stopped
 Set-Service -Name GarenaPlatform -StartupType Disabled
-Stop-Process -Name Garena
+
+Disable-ScheduledTask -TaskName "gxx speed launcher"
